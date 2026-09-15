@@ -1,0 +1,463 @@
+/* Visor de tramos — Cercado perimetral ZUNZ — INGEPRO S.A.
+   Paleta institucional. Sin licencia web de Orpheus Pro Condensed ni Aktiv
+   Grotesk: se usa la sans-serif del sistema, sin cursivas. */
+
+:root {
+  --azul-ingepro: #0d3b65;
+  --gris: #4a4a4a;
+  --hueso: #e9e5d6;
+  --texto: #1b1b1b;
+  --verde: #4db69c;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--hueso);
+  color: var(--texto);
+  font-family: "Aktiv Grotesk", "Helvetica Neue", Arial, sans-serif;
+  font-style: normal;
+}
+
+#viewer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  background: var(--hueso);
+}
+
+#loading {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hueso);
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  z-index: 20;
+}
+
+#loading[hidden] {
+  display: none;
+}
+
+#aviso {
+  position: fixed;
+  top: calc(52px + env(safe-area-inset-top) + 56px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(27, 27, 27, 0.9);
+  color: var(--hueso);
+  padding: 0.6em 1.1em;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  z-index: 15;
+  max-width: 90vw;
+  text-align: center;
+}
+
+/* --- Header --- */
+
+#topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(52px + env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top);
+  padding-left: 10px;
+  padding-right: 14px;
+  background: var(--azul-ingepro);
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  z-index: 25;
+}
+
+#titulo {
+  flex: 1;
+  min-width: 0;
+  color: var(--hueso);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#menu-toggle {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+#menu-toggle .bar {
+  width: 22px;
+  height: 2px;
+  background: var(--hueso);
+  border-radius: 1px;
+}
+
+#logo {
+  flex-shrink: 0;
+  height: 20px;
+  width: auto;
+  display: block;
+}
+
+/* --- Selector de vista --- */
+
+#vistas {
+  position: fixed;
+  top: calc(52px + env(safe-area-inset-top) + 10px);
+  left: 10px;
+  display: flex;
+  gap: 4px;
+  background: rgba(233, 229, 214, 0.92);
+  border: 1px solid rgba(13, 59, 101, 0.25);
+  border-radius: 999px;
+  padding: 3px;
+  z-index: 12;
+}
+
+.vista {
+  background: none;
+  border: none;
+  border-radius: 999px;
+  padding: 0.45em 0.85em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--azul-ingepro);
+}
+
+.vista.activo {
+  background: var(--azul-ingepro);
+  color: var(--hueso);
+}
+
+/* --- Herramientas --- */
+
+#herramientas {
+  position: fixed;
+  top: calc(52px + env(safe-area-inset-top) + 10px);
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 12;
+}
+
+#herramientas button {
+  background: rgba(233, 229, 214, 0.92);
+  border: 1px solid rgba(13, 59, 101, 0.25);
+  border-radius: 8px;
+  padding: 0.5em 0.7em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--azul-ingepro);
+}
+
+#herramientas button.activo {
+  background: var(--azul-ingepro);
+  color: var(--hueso);
+}
+
+/* --- Panel de tramos --- */
+
+#menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 28;
+}
+
+#menu-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: min(330px, 85vw);
+  background: var(--hueso);
+  z-index: 29;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-105%);
+  transition: transform 0.25s ease;
+  box-shadow: 2px 0 18px rgba(0, 0, 0, 0.25);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+#menu-panel.open {
+  transform: translateX(0);
+}
+
+#menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--azul-ingepro);
+  border-bottom: 2px solid var(--azul-ingepro);
+  flex-shrink: 0;
+}
+
+#menu-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--gris);
+  padding: 0.2em 0.4em;
+}
+
+#resumen {
+  padding: 0.7em 1em;
+  font-size: 0.8rem;
+  color: var(--gris);
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(74, 74, 74, 0.15);
+  flex-shrink: 0;
+}
+
+#resumen b {
+  color: var(--azul-ingepro);
+}
+
+.grupo-filtro {
+  flex-shrink: 0;
+  padding: 0.6em 1em 0;
+}
+
+.grupo-label {
+  margin: 0 0 0.45em;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gris);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+
+.chip {
+  background: none;
+  border: 1.5px solid var(--azul-ingepro);
+  color: var(--azul-ingepro);
+  border-radius: 999px;
+  padding: 0.45em 0.8em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.chip.activo {
+  background: var(--azul-ingepro);
+  color: var(--hueso);
+}
+
+.chip-n {
+  opacity: 0.65;
+  font-weight: 500;
+  margin-left: 0.35em;
+}
+
+#limpiar {
+  display: block;
+  margin: 0.7em 1em 0.5em;
+  background: none;
+  border: none;
+  color: var(--gris);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  padding: 0.3em 0;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+#menu-list {
+  overflow-y: auto;
+  flex: 1;
+  margin-top: 0.6em;
+  border-top: 1px solid rgba(74, 74, 74, 0.15);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(74, 74, 74, 0.15);
+  padding: 0.6em 1em;
+  color: var(--texto);
+}
+
+.menu-item:active {
+  background: rgba(13, 59, 101, 0.1);
+}
+
+.menu-item.activo {
+  background: rgba(77, 182, 156, 0.18);
+}
+
+.menu-num {
+  flex-shrink: 0;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: var(--verde);
+  color: var(--texto);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.menu-datos {
+  min-width: 0;
+}
+
+.menu-largo {
+  display: block;
+  font-weight: 700;
+  color: var(--azul-ingepro);
+  font-size: 1rem;
+}
+
+.menu-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--gris);
+  margin-top: 1px;
+}
+
+/* --- Ficha inferior --- */
+
+#ficha {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(233, 229, 214, 0.97);
+  border-top: 2px solid var(--azul-ingepro);
+  padding-bottom: env(safe-area-inset-bottom);
+  max-height: 52vh;
+  transition: transform 0.25s ease;
+}
+
+#ficha.colapsada #ficha-body {
+  display: none;
+}
+
+.ficha-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.55em 1em 0.55em 0;
+}
+
+#ficha-toggle {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 0.1em 0.3em 0.1em 1em;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--azul-ingepro);
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+#iso-toggle {
+  flex-shrink: 0;
+  background: var(--azul-ingepro);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55em 1em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+#iso-toggle:active {
+  background: var(--verde);
+}
+
+.chevron {
+  font-size: 1rem;
+  color: var(--gris);
+}
+
+#ficha.colapsada .chevron {
+  transform: rotate(180deg);
+}
+
+#ficha-body {
+  padding: 0 1em 1em;
+  overflow-y: auto;
+  max-height: 40vh;
+}
+
+.f-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.35em 0;
+  border-bottom: 1px solid rgba(74, 74, 74, 0.15);
+  font-size: 0.95rem;
+}
+
+.f-row span:last-child {
+  text-align: right;
+}
+
+.f-label {
+  color: var(--gris);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+#f-nota {
+  margin: 0.7em 0 0;
+  font-size: 0.82rem;
+  color: var(--gris);
+  line-height: 1.45;
+  border-left: 3px solid var(--verde);
+  padding-left: 0.7em;
+}

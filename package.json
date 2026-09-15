@@ -1,0 +1,22 @@
+{
+  "name": "visor-cercado-zunz",
+  "version": "1.0.0",
+  "description": "Visor 3D de tramos del cercado perimetral ZUNZ - INGEPRO S.A.",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "tramos": "node tools/gen-tramos.mjs",
+    "convert": "node tools/convert-ifc.mjs",
+    "build": "node tools/build.mjs",
+    "serve": "npx --yes serve web -l 8081"
+  },
+  "dependencies": {
+    "@thatopen/fragments": "^3.4.7",
+    "camera-controls": "^3.1.2",
+    "three": "^0.185.1",
+    "web-ifc": "^0.0.77"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

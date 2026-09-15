@@ -1,0 +1,556 @@
+{
+ "tramos": [
+  {
+   "id": 1,
+   "fila": "B",
+   "filaDesc": "Fila sur",
+   "largo": 2900,
+   "vanos": [
+    2900
+   ],
+   "postes": [
+    "23YFEaYzP0iPuccNtVRLj2",
+    "1QZ3iqNZ95wALUla7O8bHc"
+   ],
+   "barras": [
+    "1QZ3iqNZ95wALUla7O8aXf",
+    "23YFEaYzP0iPuccNtVRLms"
+   ],
+   "zapatas": [
+    "1QZ3iqNZ95wALUla7O8c5e",
+    "1QZ3iqNZ95wALUla7O8c5f"
+   ],
+   "tubosPorTipo": {
+    "Tubo 2\"": 2
+   },
+   "zapatasPorTipo": {
+    "FD": 1,
+    "FC": 1
+   },
+   "metrosBarra": 5748,
+   "caja": {
+    "eje": -6.07,
+    "dir": "x",
+    "ini": -9.286,
+    "fin": -6.386
+   }
+  },
+  {
+   "id": 2,
+   "fila": "B",
+   "filaDesc": "Fila sur",
+   "largo": 2900,
+   "vanos": [
+    2900
+   ],
+   "postes": [
+    "23YFEaYzP0iPuccNtVRLq1",
+    "1QZ3iqNZ95wALUla7O8bHd"
+   ],
+   "barras": [
+    "23YFEaYzP0iPuccNtVRLxG",
+    "23YFEaYzP0iPuccNtVRL4L"
+   ],
+   "zapatas": [
+    "1QZ3iqNZ95wALUla7O8c5f",
+    "1QZ3iqNZ95wALUla7O8c5c"
+   ],
+   "tubosPorTipo": {
+    "Tubo 2\"": 2
+   },
+   "zapatasPorTipo": {
+    "FC": 2
+   },
+   "metrosBarra": 5774,
+   "caja": {
+    "eje": -6.07,
+    "dir": "x",
+    "ini": -6.286,
+    "fin": -3.386
+   }
+  },
+  {
+   "id": 3,
+   "fila": "B",
+   "filaDesc": "Fila sur",
+   "largo": 2900,
+   "vanos": [
+    2900
+   ],
+   "postes": [
+    "23YFEaYzP0iPuccNtVRLqU",
+    "1QZ3iqNZ95wALUla7O8bHa"
+   ],
+   "barras": [
+    "23YFEaYzP0iPuccNtVRL1L",
+    "23YFEaYzP0iPuccNtVRL9w"
+   ],
+   "zapatas": [
+    "1QZ3iqNZ95wALUla7O8c5c",
+    "1QZ3iqNZ95wALUla7O8c5d"
+   ],
+   "tubosPorTipo": {
+    "Tubo 2\"": 2
+   },
+   "zapatasPorTipo": {
+    "FC": 1,
+    "FD": 1
+   },
+   "metrosBarra": 5800,
+   "caja": {
+    "eje": -6.07,
+    "dir": "x",
+    "ini": -3.286,
+    "fin": -0.386
+   }
+  },
+  {
+   "id": 4,
+   "fila": "B",
+   "filaDesc": "Fila sur",
+   "largo": 6460,
+   "vanos": [
+    1450,
+    3000,
+    2010
+   ],
+   "postes": [
+    "23YFEaYzP0iPuccNtVRLtC",
+    "1QZ3iqNZ95wALUla7O8bHb",
+    "1QZ3iqNZ95wALUla7O8bHY",
+    "1QZ3iqNZ95wALUla7O8bHZ"
+   ],
+   "barras": [
+    "23YFEaYzP0iPuccNtVRLCb",
+    "23YFEaYzP0iPuccNtVRLGO"
+   ],
+   "zapatas": [
+    "1QZ3iqNZ95wALUla7O8c5d",
+    "1QZ3iqNZ95wALUla7O8c5a",
+    "1QZ3iqNZ95wALUla7O8c5b",
+    "1QZ3iqNZ95wALUla7O8c5Y"
+   ],
+   "tubosPorTipo": {
+    "Tubo 3\"": 2,
+    "Tubo 2\"": 2
+   },
+   "zapatasPorTipo": {
+    "FD": 2,
+    "FE": 2
+   },
+   "metrosBarra": 12920,
+   "caja": {
+    "eje": -6.07,
+    "dir": "x",
+    "ini": -0.286,
+    "fin": 6.174
+   }
+  },
+  {
+   "id": 5,
+   "fila": "B",
+   "filaDesc": "Fila sur",
+   "largo": 2950,
+   "vanos": [
+    2950
+   ],
+   "postes": [
+    "23YFEaYzP0iPuccNtVRLsM",
+    "1QZ3iqNZ95wALUla7O8bHW"
+   ],
+   "barras": [],
+   "zapatas": [
+    "1QZ3iqNZ95wALUla7O8c5Y",
+    "1QZ3iqNZ95wALUla7O8c5Z"
+   ],
+   "tubosPorTipo": {
+    "Tubo 2\"": 2
+   },
+   "zapatasPorTipo": {
+    "FD": 1,
+    "FC": 1
+   },
+   "metrosBarra": 0,
+   "caja": {
+    "eje": -6.07,
+    "dir": "x",
+    "ini": 6.274,
+    "fin": 9.224
+   }
+  },
+  {
+   "id": 6,
+   "fila": "B",
+   "filaDesc": "Fila sur",
+   "largo": 3000,
+   "vanos": [
+    3000
+   ],
+   "postes": [
+    "1QZ3iqNZ95wALUla7O8bHW",
+    "1QZ3iqNZ95wALUla7O8bHX"
+   ],
+   "barras": [],
+   "zapatas": [
+    "1QZ3iqNZ95wALUla7O8c5Z",
+    "1QZ3iqNZ95wALUla7O8c5W"
+   ],
+   "tubosPorTipo": {
+    "Tubo 2\"": 2
+   },
+   "zapatasPorTipo": {
+    "FC": 2
+   },
+   "metrosBarra": 0,
+   "caja": {
+    "eje": -6.07,
+    "dir": "x",
+    "ini": 9.224,
+    "fin": 12.224
+   }
+  },
+  {
+   "id": 7,
+   "fila": "B",
+   "filaDesc": "Fila sur",
+   "largo": 2950,
+   "vanos": [
+    2950
+   ],
+   "postes": [
+    "1QZ3iqNZ95wALUla7O8bHX",
+    "1QZ3iqNZ95wALUla7O8bH_"
+   ],
+   "barras": [],
+   "zapatas": [
+    "1QZ3iqNZ95wALUla7O8c5W",
+    "1QZ3iqNZ95wALUla7O8c5X"
+   ],
+   "tubosPorTipo": {
+    "Tubo 2\"": 2
+   },
+   "zapatasPorTipo": {
+    "FC": 1,
+    "FD": 1
+   },
+   "metrosBarra": 0,
+   "caja": {
+    "eje": -6.07,
+    "dir": "x",
+    "ini": 12.224,
+    "fin": 15.174
+   }
+  },
+  {
+   "id": 8,
+   "fila": "L",
+   "filaDesc": "Lateral este",
+   "largo": 9100,
+   "vanos": [
+    3050,
+    3000,
+    3050
+   ],
+   "postes": [
+    "1QZ3iqNZ95wALUla7O8bH$",
+    "1QZ3iqNZ95wALUla7O8Ymv",
+    "1QZ3iqNZ95wALUla7O8Y0x",
+    "1QZ3iqNZ95wALUla7O8YvA"
+   ],
+   "barras": [
+    "1QZ3iqNZ95wALUla7O8YQ4",
+    "1QZ3iqNZ95wALUla7O8YIe"
+   ],
+   "zapatas": [
+    "1QZ3iqNZ95wALUla7O8c5_",
+    "1QZ3iqNZ95wALUla7O8ad8",
+    "1QZ3iqNZ95wALUla7O8adU",
+    "1QZ3iqNZ95wALUla7O8adI"
+   ],
+   "tubosPorTipo": {
+    "Tubo 3\"": 2,
+    "Tubo 2\"": 2
+   },
+   "zapatasPorTipo": {
+    "FA": 2,
+    "FE": 2
+   },
+   "metrosBarra": 18148,
+   "caja": {
+    "eje": 18.104,
+    "dir": "y",
+    "ini": -6.07,
+    "fin": 3.03
+   }
+  },
+  {
+   "id": 9,
+   "fila": "A",
+   "filaDesc": "Fila norte",
+   "largo": 9100,
+   "vanos": [
+    3000,
+    3000,
+    3100
+   ],
+   "postes": [
+    "1QZ3iqNZ95wALUla7O8ZNT",
+    "1QZ3iqNZ95wALUla7O8YgE",
+    "1QZ3iqNZ95wALUla7O8YlZ",
+    "1QZ3iqNZ95wALUla7O8YbD"
+   ],
+   "barras": [],
+   "zapatas": [
+    "1QZ3iqNZ95wALUla7O8ZhF",
+    "1QZ3iqNZ95wALUla7O8ZhE",
+    "1QZ3iqNZ95wALUla7O8Zen",
+    "1QZ3iqNZ95wALUla7O8Zem"
+   ],
+   "tubosPorTipo": {
+    "Tubo 2\"": 4
+   },
+   "zapatasPorTipo": {
+    "FE": 4
+   },
+   "metrosBarra": 0,
+   "caja": {
+    "eje": 3.03,
+    "dir": "x",
+    "ini": 7.804,
+    "fin": 16.904
+   }
+  },
+  {
+   "id": 10,
+   "fila": "A",
+   "filaDesc": "Fila norte",
+   "largo": 8360,
+   "vanos": [
+    3300,
+    3000,
+    2060
+   ],
+   "postes": [
+    "1QZ3iqNZ95wALUla7O8Z6V",
+    "1QZ3iqNZ95wALUla7O8ZOJ",
+    "1QZ3iqNZ95wALUla7O8ZT4",
+    "1QZ3iqNZ95wALUla7O8ZG$"
+   ],
+   "barras": [],
+   "zapatas": [
+    "1QZ3iqNZ95wALUla7O8ZhB",
+    "1QZ3iqNZ95wALUla7O8ZhA",
+    "1QZ3iqNZ95wALUla7O8ZhD",
+    "1QZ3iqNZ95wALUla7O8ZhC"
+   ],
+   "tubosPorTipo": {
+    "Tubo 2\"": 4
+   },
+   "zapatasPorTipo": {
+    "FE": 4
+   },
+   "metrosBarra": 0,
+   "caja": {
+    "eje": 3.03,
+    "dir": "x",
+    "ini": -3.576,
+    "fin": 4.784
+   }
+  }
+ ],
+ "insitu": {
+  "postes": [
+   "1QZ3iqNZ95wALUla7O8bEm",
+   "1QZ3iqNZ95wALUla7O8bHf",
+   "1QZ3iqNZ95wALUla7O8ZF$",
+   "1QZ3iqNZ95wALUla7O8Z3B",
+   "1QZ3iqNZ95wALUla7O8Z5g",
+   "23YFEaYzP0iPuccNtVRLv0",
+   "3beFL$6KT5DO0EqIpXwL6p",
+   "3beFL$6KT5DO0EqIpXwL1d",
+   "3beFL$6KT5DO0EqIpXwL90",
+   "3beFL$6KT5DO0EqIpXwL9B"
+  ],
+  "barras": [
+   "1QZ3iqNZ95wALUla7O8ahj",
+   "1QZ3iqNZ95wALUla7O8aZg",
+   "1QZ3iqNZ95wALUla7O8YG1",
+   "23YFEaYzP0iPuccNtVRKWU",
+   "23YFEaYzP0iPuccNtVRKai",
+   "3beFL$6KT5DO0EqIpXwAia",
+   "3beFL$6KT5DO0EqIpXwAnR",
+   "3beFL$6KT5DO0EqIpXwAza",
+   "3beFL$6KT5DO0EqIpXwA$u",
+   "3beFL$6KT5DO0EqIpXwAwc",
+   "3beFL$6KT5DO0EqIpXwLKC",
+   "3beFL$6KT5DO0EqIpXwLM9"
+  ]
+ },
+ "catalogo": {
+  "zapatas": {
+   "FE": [
+    "1QZ3iqNZ95wALUla7O8c5h",
+    "1QZ3iqNZ95wALUla7O8c5a",
+    "1QZ3iqNZ95wALUla7O8c5b",
+    "1QZ3iqNZ95wALUla7O8ad8",
+    "1QZ3iqNZ95wALUla7O8adU",
+    "1QZ3iqNZ95wALUla7O8Zem",
+    "1QZ3iqNZ95wALUla7O8Zen",
+    "1QZ3iqNZ95wALUla7O8ZhE",
+    "1QZ3iqNZ95wALUla7O8ZhF",
+    "1QZ3iqNZ95wALUla7O8ZhC",
+    "1QZ3iqNZ95wALUla7O8ZhD",
+    "1QZ3iqNZ95wALUla7O8ZhA",
+    "1QZ3iqNZ95wALUla7O8ZhB",
+    "1QZ3iqNZ95wALUla7O8Zh6"
+   ],
+   "FD": [
+    "1QZ3iqNZ95wALUla7O8c5e",
+    "1QZ3iqNZ95wALUla7O8c5d",
+    "1QZ3iqNZ95wALUla7O8c5Y",
+    "1QZ3iqNZ95wALUla7O8c5X"
+   ],
+   "FC": [
+    "1QZ3iqNZ95wALUla7O8c5f",
+    "1QZ3iqNZ95wALUla7O8c5c",
+    "1QZ3iqNZ95wALUla7O8c5Z",
+    "1QZ3iqNZ95wALUla7O8c5W"
+   ],
+   "FA": [
+    "1QZ3iqNZ95wALUla7O8c5_",
+    "1QZ3iqNZ95wALUla7O8adI",
+    "1QZ3iqNZ95wALUla7O8Zh8",
+    "1QZ3iqNZ95wALUla7O8Zh9"
+   ]
+  },
+  "tubos": {
+   "Tubo 2\"": [
+    "1QZ3iqNZ95wALUla7O8bEm",
+    "1QZ3iqNZ95wALUla7O8bHc",
+    "1QZ3iqNZ95wALUla7O8bHd",
+    "1QZ3iqNZ95wALUla7O8bHa",
+    "1QZ3iqNZ95wALUla7O8bHb",
+    "1QZ3iqNZ95wALUla7O8bHY",
+    "1QZ3iqNZ95wALUla7O8bHW",
+    "1QZ3iqNZ95wALUla7O8bHX",
+    "1QZ3iqNZ95wALUla7O8bH_",
+    "1QZ3iqNZ95wALUla7O8ZF$",
+    "1QZ3iqNZ95wALUla7O8Z6V",
+    "1QZ3iqNZ95wALUla7O8ZOJ",
+    "1QZ3iqNZ95wALUla7O8ZT4",
+    "1QZ3iqNZ95wALUla7O8ZG$",
+    "1QZ3iqNZ95wALUla7O8ZNT",
+    "1QZ3iqNZ95wALUla7O8YgE",
+    "1QZ3iqNZ95wALUla7O8YlZ",
+    "1QZ3iqNZ95wALUla7O8YbD",
+    "1QZ3iqNZ95wALUla7O8Ymv",
+    "1QZ3iqNZ95wALUla7O8Y0x",
+    "23YFEaYzP0iPuccNtVRLj2",
+    "23YFEaYzP0iPuccNtVRLq1",
+    "23YFEaYzP0iPuccNtVRLqU",
+    "23YFEaYzP0iPuccNtVRLsM"
+   ],
+   "Tubo 3\"": [
+    "1QZ3iqNZ95wALUla7O8bHf",
+    "1QZ3iqNZ95wALUla7O8bHZ",
+    "1QZ3iqNZ95wALUla7O8bH$",
+    "1QZ3iqNZ95wALUla7O8Z3B",
+    "1QZ3iqNZ95wALUla7O8Z5g",
+    "1QZ3iqNZ95wALUla7O8YvA",
+    "23YFEaYzP0iPuccNtVRLtC",
+    "23YFEaYzP0iPuccNtVRLv0"
+   ],
+   "Tubo 1\" 1/4": [
+    "3beFL$6KT5DO0EqIpXwL6p",
+    "3beFL$6KT5DO0EqIpXwL1d",
+    "3beFL$6KT5DO0EqIpXwL90",
+    "3beFL$6KT5DO0EqIpXwL9B"
+   ]
+  },
+  "barras": {
+   "Tubo Horizontal 1\" 1/4": [
+    "1QZ3iqNZ95wALUla7O8ahj",
+    "1QZ3iqNZ95wALUla7O8aXf",
+    "1QZ3iqNZ95wALUla7O8aZg",
+    "1QZ3iqNZ95wALUla7O8YQ4",
+    "1QZ3iqNZ95wALUla7O8YTi",
+    "1QZ3iqNZ95wALUla7O8YG1",
+    "1QZ3iqNZ95wALUla7O8YIe",
+    "23YFEaYzP0iPuccNtVRLms",
+    "23YFEaYzP0iPuccNtVRLxG",
+    "23YFEaYzP0iPuccNtVRL1L",
+    "23YFEaYzP0iPuccNtVRL4L",
+    "23YFEaYzP0iPuccNtVRL9w",
+    "23YFEaYzP0iPuccNtVRLCb",
+    "23YFEaYzP0iPuccNtVRLGO",
+    "23YFEaYzP0iPuccNtVRLMh",
+    "23YFEaYzP0iPuccNtVRLT5",
+    "23YFEaYzP0iPuccNtVRKWU",
+    "23YFEaYzP0iPuccNtVRKai",
+    "3beFL$6KT5DO0EqIpXwAWW",
+    "3beFL$6KT5DO0EqIpXwAia",
+    "3beFL$6KT5DO0EqIpXwAnR",
+    "3beFL$6KT5DO0EqIpXwAza",
+    "3beFL$6KT5DO0EqIpXwA$u",
+    "3beFL$6KT5DO0EqIpXwAwc",
+    "3beFL$6KT5DO0EqIpXwLKC",
+    "3beFL$6KT5DO0EqIpXwLM9"
+   ]
+  }
+ },
+ "resumen": {
+  "totalTramos": 10,
+  "metrosTaller": 50620,
+  "perimetro": 69750,
+  "zapatas": {
+   "FE": 14,
+   "FD": 4,
+   "FC": 4,
+   "FA": 4
+  },
+  "postes": {
+   "Tubo 2\"": 24,
+   "Tubo 3\"": 8,
+   "Tubo 1\" 1/4": 4
+  }
+ },
+ "barrasContinuas": [
+  {
+   "guid": "1QZ3iqNZ95wALUla7O8YTi",
+   "largo": 24917,
+   "tramos": [
+    9,
+    10
+   ]
+  },
+  {
+   "guid": "23YFEaYzP0iPuccNtVRLMh",
+   "largo": 8900,
+   "tramos": [
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "guid": "23YFEaYzP0iPuccNtVRLT5",
+   "largo": 8900,
+   "tramos": [
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "guid": "3beFL$6KT5DO0EqIpXwAWW",
+   "largo": 24920,
+   "tramos": [
+    9,
+    10
+   ]
+  }
+ ],
+ "terreno": [
+  "0QpKHxRCj9Pf8Hc_MOu4tI"
+ ]
+}
