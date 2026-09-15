@@ -108,42 +108,36 @@
    "id": 4,
    "fila": "B",
    "filaDesc": "Fila sur",
-   "largo": 6460,
+   "largo": 4450,
    "vanos": [
     1450,
-    3000,
-    2010
+    3000
    ],
    "postes": [
     "23YFEaYzP0iPuccNtVRLtC",
     "1QZ3iqNZ95wALUla7O8bHb",
-    "1QZ3iqNZ95wALUla7O8bHY",
-    "1QZ3iqNZ95wALUla7O8bHZ"
+    "1QZ3iqNZ95wALUla7O8bHY"
    ],
-   "barras": [
-    "23YFEaYzP0iPuccNtVRLCb",
-    "23YFEaYzP0iPuccNtVRLGO"
-   ],
+   "barras": [],
    "zapatas": [
     "1QZ3iqNZ95wALUla7O8c5d",
     "1QZ3iqNZ95wALUla7O8c5a",
-    "1QZ3iqNZ95wALUla7O8c5b",
-    "1QZ3iqNZ95wALUla7O8c5Y"
+    "1QZ3iqNZ95wALUla7O8c5b"
    ],
    "tubosPorTipo": {
-    "Tubo 3\"": 2,
+    "Tubo 3\"": 1,
     "Tubo 2\"": 2
    },
    "zapatasPorTipo": {
-    "FD": 2,
+    "FD": 1,
     "FE": 2
    },
-   "metrosBarra": 12920,
+   "metrosBarra": 0,
    "caja": {
     "eje": -6.07,
     "dir": "x",
     "ini": -0.286,
-    "fin": 6.174
+    "fin": 4.164
    }
   },
   {
@@ -362,6 +356,7 @@
   "postes": [
    "1QZ3iqNZ95wALUla7O8bEm",
    "1QZ3iqNZ95wALUla7O8bHf",
+   "1QZ3iqNZ95wALUla7O8bHZ",
    "1QZ3iqNZ95wALUla7O8ZF$",
    "1QZ3iqNZ95wALUla7O8Z3B",
    "1QZ3iqNZ95wALUla7O8Z5g",
@@ -500,7 +495,7 @@
  },
  "resumen": {
   "totalTramos": 10,
-  "metrosTaller": 50620,
+  "metrosTaller": 48610,
   "perimetro": 69750,
   "zapatas": {
    "FE": 14,
@@ -521,6 +516,20 @@
    "tramos": [
     9,
     10
+   ]
+  },
+  {
+   "guid": "23YFEaYzP0iPuccNtVRLCb",
+   "largo": 6460,
+   "tramos": [
+    4
+   ]
+  },
+  {
+   "guid": "23YFEaYzP0iPuccNtVRLGO",
+   "largo": 6460,
+   "tramos": [
+    4
    ]
   },
   {
