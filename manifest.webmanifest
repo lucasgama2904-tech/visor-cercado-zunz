@@ -1,0 +1,9 @@
+{
+  "name": "Cercado ZUNZ — Tramos de fabricación",
+  "short_name": "Cercado ZUNZ",
+  "start_url": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#e9e5d6",
+  "theme_color": "#e9e5d6"
+}

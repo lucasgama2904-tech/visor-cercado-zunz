@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Cercado ZUNZ — Tramos de fabricación</title>
+  <meta name="theme-color" content="#e9e5d6" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <canvas id="viewer"></canvas>
+
+  <header id="topbar">
+    <button id="menu-toggle" aria-label="Ver los tramos">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <span id="titulo">Cercado perimetral ZUNZ</span>
+    <img id="logo" src="./LOGO.svg" alt="INGEPRO" />
+  </header>
+
+  <div id="vistas">
+    <button class="vista activo" data-vista="taller">Taller</button>
+    <button class="vista" data-vista="obra">In situ</button>
+    <button class="vista" data-vista="todo">Todo</button>
+  </div>
+
+  <div id="herramientas">
+    <button id="btn-planta" title="Vista en planta">Planta</button>
+    <button id="btn-terreno" title="Mostrar u ocultar el terreno">Terreno</button>
+  </div>
+
+  <div id="menu-backdrop" hidden></div>
+  <aside id="menu-panel">
+    <div id="menu-header">
+      <span>Tramos</span>
+      <button id="menu-close" aria-label="Cerrar">&#10005;</button>
+    </div>
+
+    <div id="resumen"></div>
+
+    <div class="grupo-filtro">
+      <p class="grupo-label">Fundaciones</p>
+      <div id="chips-zapatas" class="chips"></div>
+    </div>
+    <div class="grupo-filtro">
+      <p class="grupo-label">Tubos</p>
+      <div id="chips-tubos" class="chips"></div>
+    </div>
+    <button id="limpiar" hidden>Limpiar filtros</button>
+
+    <div id="menu-list"></div>
+  </aside>
+
+  <div id="loading">Cargando modelo&#8230;</div>
+  <div id="aviso" hidden></div>
+
+  <div id="ficha" hidden>
+    <div class="ficha-header">
+      <button id="ficha-toggle" aria-label="Colapsar ficha">
+        <span id="f-titulo"></span>
+        <span class="chevron">&#9662;</span>
+      </button>
+      <button id="iso-toggle" hidden>Aislar</button>
+    </div>
+    <div id="ficha-body">
+      <div class="f-row"><span class="f-label">Ubicaci&oacute;n</span><span id="f-fila"></span></div>
+      <div class="f-row"><span class="f-label">Largo total</span><span id="f-largo"></span></div>
+      <div class="f-row"><span class="f-label">Vanos</span><span id="f-vanos"></span></div>
+      <div class="f-row"><span class="f-label">Postes</span><span id="f-postes"></span></div>
+      <div class="f-row"><span class="f-label">Fundaciones</span><span id="f-zapatas"></span></div>
+      <div class="f-row"><span class="f-label">Barra 1&quot; 1/4</span><span id="f-barras"></span></div>
+      <p id="f-nota" hidden></p>
+    </div>
+  </div>
+
+  <script type="module" src="./app.bundle.js"></script>
+</body>
+</html>
