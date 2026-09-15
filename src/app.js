@@ -533,10 +533,12 @@ function mostrarFichaTramo(t) {
     els.fNota.hidden = true;
   } else if (continuas.length) {
     els.fBarras.textContent = `A cortar de corrida continua`;
+    const otros = continuas[0].tramos.filter((x) => x !== t.id);
     els.fNota.textContent =
       `En el modelo las barras horizontales de este tramo son parte de una corrida continua de ` +
-      `${mm(continuas[0].largo)} compartida con los tramos ${continuas[0].tramos.join(", ")}. ` +
-      `En taller hay que cortarlas a la medida del tramo, descontando la separación.`;
+      `${mm(continuas[0].largo)}` +
+      (otros.length ? ` compartida con ${otros.length > 1 ? "los tramos" : "el tramo"} ${otros.join(", ")}.` : `, más larga que el tramo.`) +
+      ` En taller hay que cortarlas a la medida del tramo, descontando la separación.`;
     els.fNota.hidden = false;
   } else {
     els.fBarras.textContent = "—";

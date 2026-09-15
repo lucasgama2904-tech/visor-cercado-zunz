@@ -54,7 +54,7 @@ Numerados según el croquis de obra. Fila norte es la del portón.
 | 1 | Fila sur | 2,90 m | 2900 |
 | 2 | Fila sur | 2,90 m | 2900 |
 | 3 | Fila sur | 2,90 m | 2900 |
-| 4 | Fila sur | 6,46 m | 1450 + 3000 + 2010 |
+| 4 | Fila sur | 4,45 m | 1450 + 3000 |
 | 5 | Fila sur | 2,95 m | 2950 |
 | 6 | Fila sur | 3,00 m | 3000 |
 | 7 | Fila sur | 2,95 m | 2950 |
@@ -62,9 +62,9 @@ Numerados según el croquis de obra. Fila norte es la del portón.
 | 9 | Fila norte | 9,10 m | 3000 + 3000 + 3100 |
 | 10 | Fila norte | 8,36 m | 3300 + 3000 + 2060 |
 
-Total de taller: 50,62 m de los 69,75 m de perímetro. El resto (19,13 m,
+Total de taller: 48,61 m de los 69,75 m de perímetro. El resto (21,14 m,
 incluido el portón) se arma in situ.
 
-En la fila norte y en los tramos 5, 6 y 7 las barras horizontales están
+En la fila norte y en los tramos 4, 5, 6 y 7 las barras horizontales están
 modeladas como una corrida continua: el taller las corta a la medida de cada
 tramo, descontando la separación.

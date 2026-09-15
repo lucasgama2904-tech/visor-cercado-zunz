@@ -29,7 +29,7 @@ const TRAMOS = [
   { id: 1, fila: "B", desde: -9.286, hasta: -6.386 },
   { id: 2, fila: "B", desde: -6.286, hasta: -3.386 },
   { id: 3, fila: "B", desde: -3.286, hasta: -0.386 },
-  { id: 4, fila: "B", desde: -0.286, hasta: 6.174 },
+  { id: 4, fila: "B", desde: -0.286, hasta: 4.164 },
   { id: 5, fila: "B", desde: 6.274, hasta: 9.224 },
   { id: 6, fila: "B", desde: 9.224, hasta: 12.224 },
   { id: 7, fila: "B", desde: 12.224, hasta: 15.174 },
