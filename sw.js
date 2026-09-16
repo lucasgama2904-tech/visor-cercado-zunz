@@ -4,7 +4,7 @@
 //
 // Subí la versión del cache cada vez que reemplaces modelo.frag o
 // tramos.json en producción, para forzar la actualización.
-const CACHE = "visor-cercado-v2";
+const CACHE = "visor-cercado-v3";
 
 const PRECACHE_URLS = [
   "./",
