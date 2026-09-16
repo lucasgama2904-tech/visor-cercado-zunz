@@ -14,9 +14,9 @@ y O dan las cuatro elevaciones, Arriba y Abajo las cenitales, y el botón 3D
 del centro vuelve a la isométrica. Si hay un tramo abierto la vista se encuadra
 sobre ese tramo y no sobre el cercado entero.
 
-El norte verdadero es +Y en el IFC (), pero Fragments puede
-remapear los ejes al convertir, así que el visor no lo supone: 
-trae en  tres pares de piezas de orientación conocida y el visor
+El norte verdadero es +Y en el IFC (`TrueNorth = (0,1)`), pero Fragments puede
+remapear los ejes al convertir, así que el visor no lo supone: `tramos.json`
+trae en `referencias` tres pares de piezas de orientación conocida y el visor
 deduce el este, el norte y el vertical restando sus posiciones reales.
 
 ## Cómo está armado
