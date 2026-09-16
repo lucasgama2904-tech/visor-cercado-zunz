@@ -151,7 +151,8 @@ salida.catalogo = {
 };
 
 // El sólido topográfico del Revit es un bloque de 33,6 x 11,9 x 1,2 m que
-// entierra las zapatas. El visor lo arranca oculto, con un botón para verlo.
+// entierra las zapatas. El visor lo muestra por defecto, con un botón para
+// sacarlo y poder mirar las fundaciones.
 salida.terreno = elementos
   .filter((e) => e.ifc === "IFCBUILDINGELEMENTPROXY")
   .map((e) => e.guid);

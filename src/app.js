@@ -27,7 +27,7 @@ let datos = null;
 let todosLosIds = [];
 let idPorGuid = new Map();
 let terrenoIds = [];
-let terrenoVisible = false;
+let terrenoVisible = true; // el terreno arranca a la vista; el botón lo saca
 
 let vista = "taller"; // taller | obra | todo
 let tramoActivo = null; // número de tramo seleccionado
@@ -652,6 +652,7 @@ function initUI() {
   els.isoBtn.addEventListener("click", toggleAislado);
   els.btnPlanta.addEventListener("click", vistaPlanta);
   els.btnTerreno.addEventListener("click", toggleTerreno);
+  els.btnTerreno.classList.toggle("activo", terrenoVisible);
   els.vistas.forEach((b) => b.addEventListener("click", () => aplicarVista(b.dataset.vista)));
 }
 
