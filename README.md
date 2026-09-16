@@ -10,8 +10,8 @@ Sitio en vivo: https://lucasgama2904-tech.github.io/visor-cercado-zunz/
 ## Cubo de vistas
 
 El control de arriba a la derecha funciona como el ViewCube de Revit: N, S, E
-y O dan las cuatro elevaciones, Arriba y Abajo las cenitales, y el botón 3D
-del centro vuelve a la isométrica. Si hay un tramo abierto la vista se encuadra
+y O dan las cuatro elevaciones, Planta la vista cenital, y el botón 3D del
+centro vuelve a la isométrica. Si hay un tramo abierto la vista se encuadra
 sobre ese tramo y no sobre el cercado entero.
 
 El norte verdadero es +Y en el IFC (`TrueNorth = (0,1)`), pero Fragments puede

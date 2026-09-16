@@ -679,7 +679,6 @@ async function verDesde(clave) {
     este: orientacion.este,
     oeste: orientacion.este.clone().negate(),
     arriba: orientacion.arriba,
-    abajo: orientacion.arriba.clone().negate(),
   }[clave].clone();
   marcarDireccion(clave);
 
@@ -689,10 +688,9 @@ async function verDesde(clave) {
   box.getCenter(c);
   box.getSize(s);
 
-  // En planta y desde abajo el norte va hacia arriba de la pantalla, como en
-  // un plano; en las elevaciones el que va hacia arriba es el vertical.
-  const cenital = clave === "arriba" || clave === "abajo";
-  camera.up.copy(cenital ? orientacion.norte : orientacion.arriba);
+  // En planta el norte va hacia arriba de la pantalla, como en un plano; en
+  // las elevaciones el que va hacia arriba es el vertical.
+  camera.up.copy(clave === "arriba" ? orientacion.norte : orientacion.arriba);
   controls.updateCameraUp();
 
   const dist = Math.max(s.x, s.y, s.z) * 1.8 + 3;
