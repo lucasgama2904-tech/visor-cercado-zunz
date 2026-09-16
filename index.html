@@ -26,7 +26,21 @@
   </div>
 
   <div id="herramientas">
-    <button id="btn-planta" title="Vista en planta">Planta</button>
+    <div id="cubo" role="group" aria-label="Vistas">
+      <span class="celda"></span>
+      <button class="dir" data-dir="norte" title="Ver desde el norte">N</button>
+      <span class="celda"></span>
+      <button class="dir" data-dir="oeste" title="Ver desde el oeste">O</button>
+      <button class="dir centro" data-dir="iso" title="Volver a la vista 3D">3D</button>
+      <button class="dir" data-dir="este" title="Ver desde el este">E</button>
+      <span class="celda"></span>
+      <button class="dir" data-dir="sur" title="Ver desde el sur">S</button>
+      <span class="celda"></span>
+    </div>
+    <div id="cubo-z">
+      <button class="dir" data-dir="arriba" title="Vista en planta, desde arriba">Arriba</button>
+      <button class="dir" data-dir="abajo" title="Vista desde abajo">Abajo</button>
+    </div>
     <button id="btn-terreno" title="Mostrar u ocultar el terreno">Terreno</button>
   </div>
 

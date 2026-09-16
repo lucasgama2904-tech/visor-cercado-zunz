@@ -183,6 +183,48 @@ body {
   color: var(--hueso);
 }
 
+/* Cubo de vistas, al estilo del ViewCube de Revit: la cruz de puntos
+   cardinales con la vista 3D en el centro, y abajo las dos verticales. */
+
+#cubo {
+  display: grid;
+  grid-template-columns: repeat(3, 34px);
+  grid-template-rows: repeat(3, 34px);
+  gap: 3px;
+}
+
+#cubo .celda {
+  display: block;
+}
+
+#cubo .dir {
+  padding: 0;
+  width: 34px;
+  height: 34px;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+#cubo .dir.centro {
+  font-size: 0.72rem;
+  background: rgba(13, 59, 101, 0.1);
+}
+
+#cubo-z {
+  display: flex;
+  gap: 3px;
+}
+
+#cubo-z .dir {
+  flex: 1;
+  padding: 0.45em 0;
+  font-size: 0.72rem;
+}
+
+#herramientas .dir:active {
+  background: var(--verde);
+}
+
 /* --- Panel de tramos --- */
 
 #menu-backdrop {
