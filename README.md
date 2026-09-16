@@ -7,6 +7,18 @@ tipo de fundación (FA / FE / FC / FD) y por tipo de tubo (2" / 3" / 1" 1/4).
 
 Sitio en vivo: https://lucasgama2904-tech.github.io/visor-cercado-zunz/
 
+## Cubo de vistas
+
+El control de arriba a la derecha funciona como el ViewCube de Revit: N, S, E
+y O dan las cuatro elevaciones, Arriba y Abajo las cenitales, y el botón 3D
+del centro vuelve a la isométrica. Si hay un tramo abierto la vista se encuadra
+sobre ese tramo y no sobre el cercado entero.
+
+El norte verdadero es +Y en el IFC (), pero Fragments puede
+remapear los ejes al convertir, así que el visor no lo supone: 
+trae en  tres pares de piezas de orientación conocida y el visor
+deduce el este, el norte y el vertical restando sus posiciones reales.
+
 ## Cómo está armado
 
 El IFC exportado de Revit (`../Cercado-ZUNZ.ifc`, 150 KB) se convierte una vez

@@ -559,6 +559,20 @@
    ]
   }
  ],
+ "referencias": {
+  "este": {
+   "desde": "1QZ3iqNZ95wALUla7O8c5h",
+   "hasta": "1QZ3iqNZ95wALUla7O8c5_"
+  },
+  "norte": {
+   "desde": "1QZ3iqNZ95wALUla7O8c5_",
+   "hasta": "1QZ3iqNZ95wALUla7O8adI"
+  },
+  "arriba": {
+   "desde": "1QZ3iqNZ95wALUla7O8c5_",
+   "hasta": "1QZ3iqNZ95wALUla7O8bH$"
+  }
+ },
  "terreno": [
   "0QpKHxRCj9Pf8Hc_MOu4tI"
  ]

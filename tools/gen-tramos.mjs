@@ -150,6 +150,35 @@ salida.catalogo = {
   barras: agrupar(barras),
 };
 
+// Pares de piezas con orientación conocida, para que el visor pueda deducir
+// dónde quedaron el norte, el este y el vertical DESPUÉS de la conversión a
+// Fragments (que puede remapear los ejes del IFC). Cada par se resuelve en el
+// navegador leyendo la posición real de las dos piezas y restándolas, así no
+// hay que suponer nada sobre el sistema de coordenadas.
+//
+// El norte verdadero del proyecto es +Y en el IFC (IfcGeometricRepresentation-
+// Context.TrueNorth = (0,1)), y el este es +X: por eso la fila de y = 3,03 es
+// la norte y el lateral de x = 18,104 es el este.
+function ejeOeste(fila) {
+  const z = zapatas.filter((e) => Math.abs(fijaDe(fila, e.a) - FILAS[fila].eje) < 0.4);
+  return z.sort((p, q) => avanceDe(fila, p.a) - avanceDe(fila, q.a));
+}
+const zapatasSur = ejeOeste("B");
+const zapatasNorte = ejeOeste("A");
+const sureste = zapatasSur[zapatasSur.length - 1]; // esquina, x máximo de la fila sur
+const suroeste = zapatasSur[0];
+const noreste = zapatasNorte[zapatasNorte.length - 1]; // misma x que el sureste
+// Poste plantado sobre la zapata del sureste: da el vertical hacia arriba.
+const posteSureste = postes.find(
+  (e) => Math.hypot(e.a[0] - sureste.a[0], e.a[1] - sureste.a[1]) < 0.3,
+);
+
+salida.referencias = {
+  este: { desde: suroeste.guid, hasta: sureste.guid },
+  norte: { desde: sureste.guid, hasta: noreste.guid },
+  arriba: { desde: sureste.guid, hasta: posteSureste.guid },
+};
+
 // El sólido topográfico del Revit es un bloque de 33,6 x 11,9 x 1,2 m que
 // entierra las zapatas. El visor lo muestra por defecto, con un botón para
 // sacarlo y poder mirar las fundaciones.

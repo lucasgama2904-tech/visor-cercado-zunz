@@ -52,7 +52,6 @@ const els = {
   chipsTubos: $("#chips-tubos"),
   limpiar: $("#limpiar"),
   vistas: document.querySelectorAll(".vista"),
-  btnPlanta: $("#btn-planta"),
   btnTerreno: $("#btn-terreno"),
   ficha: $("#ficha"),
   fichaToggle: $("#ficha-toggle"),
@@ -303,6 +302,42 @@ async function pintar(resaltados, opciones = {}) {
 // es el eje largo del cercado. Se calcula una sola vez al arrancar y sirve
 // para orientar la cámara sin depender de cómo quedó rotado el IFC.
 let ejesModelo = null;
+let orientacion = null; // { este, norte, arriba } en coordenadas del visor
+
+// Deduce dónde quedaron el este, el norte y el vertical leyendo la posición
+// real de tres pares de piezas de orientación conocida (los define
+// gen-tramos.mjs). Así el cubo de vistas no depende de cómo Fragments haya
+// remapeado los ejes del IFC al convertir.
+async function calcularOrientacion() {
+  const centroDe = async (guid) => {
+    const localId = idPorGuid.get(guid);
+    if (localId === undefined) return null;
+    const box = await model.getMergedBox([localId]);
+    const c = new THREE.Vector3();
+    box.getCenter(c);
+    return c;
+  };
+
+  const ref = datos.referencias;
+  if (!ref) return;
+
+  const vector = async (par) => {
+    const a = await centroDe(par.desde);
+    const b = await centroDe(par.hasta);
+    if (!a || !b) return null;
+    const v = b.sub(a);
+    return v.lengthSq() > 1e-6 ? v.normalize() : null;
+  };
+
+  const este = await vector(ref.este);
+  const norte = await vector(ref.norte);
+  const arriba = await vector(ref.arriba);
+  if (!este || !norte || !arriba) {
+    console.warn("[visor-cercado] no se pudo deducir la orientación; el cubo de vistas queda desactivado");
+    return;
+  }
+  orientacion = { este, norte, arriba };
+}
 
 async function calcularEjes() {
   const box = await model.getMergedBox(todosLosIds);
@@ -326,6 +361,11 @@ function direccionTresCuartos() {
 async function encuadrar(localIds, padding = 0.5, reorientar = true) {
   const box = await model.getMergedBox(localIds?.length ? localIds : todosLosIds);
   if (reorientar && ejesModelo) {
+    if (orientacion) {
+      camera.up.copy(orientacion.arriba);
+      controls.updateCameraUp();
+    }
+    marcarDireccion("iso");
     const centro = new THREE.Vector3();
     const size = new THREE.Vector3();
     box.getCenter(centro);
@@ -617,17 +657,61 @@ function cerrarMenu() {
   els.menuPanel.classList.remove("open");
 }
 
-async function vistaPlanta() {
-  const box = await model.getMergedBox(todosLosIds);
+// Cubo de vistas: se encuadra el tramo abierto si hay uno, y si no el cercado
+// entero, para que pedir "norte" con un tramo seleccionado no te saque de él.
+function objetivoDeVista() {
+  if (!tramoActivo) return todosLosIds;
+  const t = datos.tramos.find((x) => x.id === tramoActivo);
+  const piezas = [...ids(t.postes), ...ids(t.barras), ...ids(t.zapatas)];
+  return piezas.length ? piezas : todosLosIds;
+}
+
+async function verDesde(clave) {
+  if (clave === "iso") {
+    await encuadrar(objetivoDeVista(), tramoActivo ? 0.8 : 0.3);
+    return;
+  }
+  if (!orientacion) return;
+
+  const dir = {
+    norte: orientacion.norte,
+    sur: orientacion.norte.clone().negate(),
+    este: orientacion.este,
+    oeste: orientacion.este.clone().negate(),
+    arriba: orientacion.arriba,
+    abajo: orientacion.arriba.clone().negate(),
+  }[clave].clone();
+  marcarDireccion(clave);
+
+  const box = await model.getMergedBox(objetivoDeVista());
   const c = new THREE.Vector3();
   const s = new THREE.Vector3();
   box.getCenter(c);
   box.getSize(s);
-  const alto = Math.max(s.x, s.y, s.z) * 1.1;
-  const arriba = ejesModelo.alto;
-  const destino = c.clone();
-  destino.setComponent(arriba, c.getComponent(arriba) + alto);
-  await controls.setLookAt(destino.x, destino.y, destino.z, c.x, c.y, c.z, true);
+
+  // En planta y desde abajo el norte va hacia arriba de la pantalla, como en
+  // un plano; en las elevaciones el que va hacia arriba es el vertical.
+  const cenital = clave === "arriba" || clave === "abajo";
+  camera.up.copy(cenital ? orientacion.norte : orientacion.arriba);
+  controls.updateCameraUp();
+
+  const dist = Math.max(s.x, s.y, s.z) * 1.8 + 3;
+  const ojo = c.clone().add(dir.multiplyScalar(dist));
+  await controls.setLookAt(ojo.x, ojo.y, ojo.z, c.x, c.y, c.z, true);
+
+  const padding = tramoActivo ? 0.8 : 0.4;
+  await controls.fitToBox(box, true, {
+    paddingTop: padding,
+    paddingBottom: padding,
+    paddingLeft: padding,
+    paddingRight: padding,
+  });
+}
+
+function marcarDireccion(clave) {
+  document.querySelectorAll("#herramientas .dir").forEach((b) => {
+    b.classList.toggle("activo", b.dataset.dir === clave);
+  });
 }
 
 async function toggleTerreno() {
@@ -650,7 +734,9 @@ function initUI() {
   els.menuBackdrop.addEventListener("click", cerrarMenu);
   els.fichaToggle.addEventListener("click", () => els.ficha.classList.toggle("colapsada"));
   els.isoBtn.addEventListener("click", toggleAislado);
-  els.btnPlanta.addEventListener("click", vistaPlanta);
+  document.querySelectorAll("#herramientas .dir").forEach((b) =>
+    b.addEventListener("click", () => verDesde(b.dataset.dir)),
+  );
   els.btnTerreno.addEventListener("click", toggleTerreno);
   els.btnTerreno.classList.toggle("activo", terrenoVisible);
   els.vistas.forEach((b) => b.addEventListener("click", () => aplicarVista(b.dataset.vista)));
@@ -665,6 +751,7 @@ async function main() {
   await calcularEjes();
   datos = await (await fetch(TRAMOS_URL)).json();
   await resolverGuids();
+  await calcularOrientacion();
   construirPanel();
   await construirOverlays();
 
